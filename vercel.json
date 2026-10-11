@@ -1,6 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "installCommand": "npm install --ignore-scripts",
+  "installCommand": "npm install --include=optional",
   "buildCommand": "npm run build:trading-web",
   "outputDirectory": "new-user-interface-main/dist",
   "rewrites": [
