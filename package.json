@@ -2,6 +2,9 @@
   "name": "reef-sites-workspace",
   "private": true,
   "version": "0.1.0",
+  "engines": {
+    "node": "20.x"
+  },
   "workspaces": [
     "deriv-sites-ui-kit-main",
     "new-user-interface-main",
