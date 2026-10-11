@@ -1,0 +1,55 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "installCommand": "npm install --ignore-scripts",
+  "buildCommand": "npm run build:trading-web",
+  "outputDirectory": "new-user-interface-main/dist",
+  "rewrites": [
+    {
+      "source": "/api/deriv-oauth-start",
+      "destination": "https://tsidnkyizypwlxtkkoyd.supabase.co/functions/v1/deriv-oauth-start"
+    },
+    {
+      "source": "/api/deriv-oauth-callback",
+      "destination": "https://tsidnkyizypwlxtkkoyd.supabase.co/functions/v1/deriv-oauth-callback"
+    },
+    {
+      "source": "/api/deriv-trader-session",
+      "destination": "https://tsidnkyizypwlxtkkoyd.supabase.co/functions/v1/deriv-trader-session"
+    },
+    {
+      "source": "/api/deriv-trader-accounts",
+      "destination": "https://tsidnkyizypwlxtkkoyd.supabase.co/functions/v1/deriv-trader-accounts"
+    },
+    {
+      "source": "/api/deriv-trader-otp",
+      "destination": "https://tsidnkyizypwlxtkkoyd.supabase.co/functions/v1/deriv-trader-otp"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(), payment=()"
+        }
+      ]
+    }
+  ]
+}
